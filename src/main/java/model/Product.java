@@ -30,4 +30,44 @@ public class Product implements Serializable {
 
     Product product1 = new Product("Battlefield 1", "ES/EN/RU", new ImageIcon("src/main/java/img/bf1.jpg"), 45, 4.99f);
     Product product2 = new Product("Battlefield V", "ES/EN/RU", new ImageIcon("src/main/java/img/bf5.jpg"), 24, 9.99f);
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    public void setImg(ImageIcon img) {
+        this.img = img;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
 }

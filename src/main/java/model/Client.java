@@ -2,11 +2,12 @@ package model;
 
 public class Client {
 
-    public String username, password;
+    public String username, password, numTel, email;
 
-    public Client(String username, String password) {
+    public Client(String username, String numTel, String email) {
         this.username = username;
-        this.password = password;
+        this.numTel = numTel;
+        this.email = email;
     }
 
     public String getUsername() {
@@ -23,6 +24,22 @@ public class Client {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNumTel() {
+        return numTel;
+    }
+
+    public void setNumTel(String numTel) {
+        this.numTel = numTel;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
 

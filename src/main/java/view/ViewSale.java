@@ -1,26 +1,24 @@
 package view;
 
-import javax.persistence.Column;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ViewSale extends JFrame {
 
     public JPanel panelEnter, panelTop, panelHome, panelAccount, panelCart, panelProduct;
-    public JButton jbEnter, jbHome, jbAccount, jbCart, jbProduct, jbSearchProduct;
+    public JButton jbEnter, jbHome, jbAccount, jbCart, jbProduct, jbSearchProduct, jbSaveInfo, jbClearInfo;
     public ImageIcon icon = new ImageIcon("src/main/java/img/GCODES.png");
 
-    public JLabel jlImg, jlUser, jlPass, jlWelcome, jlProfile;
-    public JTextField jtfTextValor, jtfUser, jtfPass;
+    public JLabel jlImg, jlUser, jlPass, jlWelcome, jlProfile, jlNameUser, jlEmail, jlTelNum;
+    public JTextField jtfTextValor, jtfUser, jtfPass, jtfNameUser, jtfEmail, jtfTelNum;
     public JTable jtProducts;
     public DefaultTableModel tableProduct;
     //public JComboBox jcbFilter;
 
     public ViewSale() {
-        setTitle("Digital license sale");
+        setTitle("Digital License Sale");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600);
@@ -103,12 +101,52 @@ public class ViewSale extends JFrame {
         panelAccount.setVisible(false);
         jlProfile = new JLabel("PERFIL");
         jlProfile.setBounds(30, 0, 200,50);
-        //jlProfile.setOpaque(false);
-        //jlProfile.setFont(new Font("arial", Font.BOLD, 20));
-        //jlProfile.setLayout(null);
-        panelAccount.add(jlProfile);
-        add(panelAccount);
+        jlProfile.setOpaque(false);
+        jlProfile.setFont(new Font("arial", Font.BOLD, 20));
+        jlProfile.setLayout(null);
 
+        jlNameUser = new JLabel("NOM USUARI*");
+        jlNameUser.setBounds(40, 30, 200,50);
+        jlNameUser.setOpaque(false);
+        jlNameUser.setFont(new Font("arial", Font.BOLD, 15));
+        jlNameUser.setLayout(null);
+        jtfNameUser = new JTextField("nom");
+        jtfNameUser.setBounds(40, 70, 200, 40);
+
+        jlEmail = new JLabel("EMAIL*");
+        jlEmail.setBounds(40, 120, 200,50);
+        jlEmail.setOpaque(false);
+        jlEmail.setFont(new Font("arial", Font.BOLD, 15));
+        jlEmail.setLayout(null);
+        jtfEmail = new JTextField("email");
+        jtfEmail.setBounds(40, 160, 200, 40);
+
+        jlTelNum = new JLabel("NUM. TELF.");
+        jlTelNum.setBounds(40, 210, 200,50);
+        jlTelNum.setOpaque(false);
+        jlTelNum.setFont(new Font("arial", Font.BOLD, 15));
+        jlTelNum.setLayout(null);
+        jtfTelNum = new JTextField("número de telèfon");
+        jtfTelNum.setBounds(40, 250, 200, 40);
+
+        jbSaveInfo = new JButton("Guardar Canvis");
+        jbSaveInfo.setActionCommand("guardar");
+        jbSaveInfo.setBounds(200,400,150,40);
+
+        jbClearInfo = new JButton("Esborrar Tot");
+        jbClearInfo.setActionCommand("esborra");
+        jbClearInfo.setBounds(400,400,150,40);
+
+        panelAccount.add(jbSaveInfo);
+        panelAccount.add(jbClearInfo);
+        panelAccount.add(jtfNameUser);
+        panelAccount.add(jtfEmail);
+        panelAccount.add(jtfTelNum);
+        panelAccount.add(jlTelNum);
+        panelAccount.add(jlEmail);
+        panelAccount.add(jlProfile);
+        panelAccount.add(jlNameUser);
+        add(panelAccount);
 
 
         //PANELL CISTELLA

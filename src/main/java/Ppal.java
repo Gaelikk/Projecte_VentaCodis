@@ -1,19 +1,21 @@
 import controller.InitialController;
 import controller.MenuController;
-import controller.SaleController;
+import controller.ProfileChangesController;
 import model.Client;
-import model.Sale;
+import model.File.FileManagement;
+import model.VentaCodis;
 import view.ViewSale;
 
 public class Ppal {
     public static void main(String[] args) {
         ViewSale v = new ViewSale();
-        Sale s = new Sale();
+        VentaCodis vc = new VentaCodis();
 
         MenuController mc = new MenuController(v);
-        SaleController sc = new SaleController(v, s);
+        ProfileChangesController pcc = new ProfileChangesController(v);
+        FileManagement fm = new FileManagement(vc);
 
-        Client client1 = new Client("gael", "g123456");
+        Client client1 = new Client("gael", "g123456", "611473145");
         InitialController ic = new InitialController(v, client1);
     }
 }
