@@ -14,7 +14,7 @@ public class SaleController implements MouseListener {
     public SaleController(ViewSale v, Sale s) {
         this.v = v;
         this.s = s;
-        v.jtClients.addMouseListener(this);
+        //v.jtProducts.addMouseListener(this);
     }
 
     @Override
