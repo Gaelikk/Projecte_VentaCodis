@@ -7,8 +7,8 @@ import java.util.List;
 
 public class VentaCodis {
     private String nameWeb;
-    private List<Client> clientList;
-    private List<Product> productList;
+    private List<Client> clientList = new ArrayList<>();
+    private List<Product> productList = new ArrayList<>();
     private List<Sale> saleList;
     private FileManagement fm;
 

@@ -18,6 +18,7 @@ public class InitialController implements KeyListener {
         this.client = client;
         this.vista.jtfUser.addKeyListener(this);
         this.vista.jtfPass.addKeyListener(this);
+        //this.vista.jbEnter;
     }
 
     @Override
@@ -32,10 +33,10 @@ public class InitialController implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if (Functions.iniciar(client,vista)== true){
+        if (Functions.iniciar(client, vista)){
             vista.jbEnter.setEnabled(true);
         }else{
-            vista.jbEnter.setEnabled(false);
+            vista.jbEnter.setEnabled(true);
         }
     }
 }

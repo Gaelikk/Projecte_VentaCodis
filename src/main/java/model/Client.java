@@ -10,11 +10,14 @@ public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProduct;
-    @Column(name = "Nom Clients")
-    public String username, password, numTel, email;
+    private String username;
+    private String password;
+    private String numTel;
+    private String email;
 
-    public Client(){
+    public Client() {
     }
+
     public Client(String username, String numTel, String email) {
         this.username = username;
         this.numTel = numTel;
