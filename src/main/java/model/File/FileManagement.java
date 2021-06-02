@@ -18,7 +18,7 @@ public class FileManagement {
 
     public FileManagement(VentaCodis vc) {
         writeClientList(vc.getClientList());
-        writeProductList(vc.getProductList());
+        //writeProductList(vc.getProductList());
     }
 
     private void createFolder() {
@@ -26,12 +26,12 @@ public class FileManagement {
         if (folder.mkdir()) {
             System.out.println("Carpeta creada correctament!!!");
         } else {
-            System.err.println("Error!!! La carpeta potser que estigués creda");
+            System.err.println("Error!!! La carpeta potser que ja estigués creda");
         }
     }
 
     private File createDocClient(String fileName) {
-        document = new File("factures" + File.separator + fileName);
+        document = new File("facturació" + File.separator + fileName);
         if (document.exists()) {
             System.err.println("El fitxer ja existeix...");
         } else {
@@ -49,7 +49,7 @@ public class FileManagement {
     }
 
     private File createDocProduct(String fileName) {
-        document = new File("factures" + File.separator + fileName);
+        document = new File("productes" + File.separator + fileName);
         if (document.exists()) {
             System.err.println("El fitxer ja existeix...");
         } else {
@@ -74,7 +74,7 @@ public class FileManagement {
             bWriter = new BufferedWriter(fWriter);
 
             for (Client c : clientList) {
-                bWriter.write(c.getUsername() + " - " + c.getEmail());
+                bWriter.write(c.getUsername() + " - " + c.getEmail()+" - "+c.getNumTel());
                 bWriter.write(System.lineSeparator());
             }
             bWriter.close();
@@ -83,6 +83,7 @@ public class FileManagement {
         }
     }
 
+    /*
     public void writeProductList(List<Product> productList) {
         createFolder();
 
@@ -99,4 +100,5 @@ public class FileManagement {
             e.printStackTrace();
         }
     }
+     */
 }

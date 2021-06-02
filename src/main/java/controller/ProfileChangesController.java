@@ -27,10 +27,10 @@ public class ProfileChangesController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equalsIgnoreCase("guardar")) {
-            Client newClient = new Client(v.jtfNameUser.getText(),
+            Client updateClient = new Client(v.jtfNameUser.getText(),
                     v.jtfEmail.getText(),
                     v.jtfTelNum.getText());
-            vc.updateClient(newClient);
+            vc.addClient(updateClient);
 
             for (Client c : vc.getClientList()) {
                 String[] dades = new String[3];

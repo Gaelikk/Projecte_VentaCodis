@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class InitialController implements KeyListener, ActionListener {
+public class InitialController implements KeyListener {
     public ViewSale vista;
     public Client client;
 
@@ -18,7 +18,6 @@ public class InitialController implements KeyListener, ActionListener {
         this.client = client;
         this.vista.jtfUser.addKeyListener(this);
         this.vista.jtfPass.addKeyListener(this);
-        //this.vista.jbEnter.addActionListener(this);
     }
 
     @Override
@@ -37,15 +36,6 @@ public class InitialController implements KeyListener, ActionListener {
             vista.jbEnter.setEnabled(true);
         }else{
             vista.jbEnter.setEnabled(false);
-        }
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(vista.jtfUser.getText()==null){
-
-        }else{
-            vista.jbEnter.setEnabled(true);
         }
     }
 }
