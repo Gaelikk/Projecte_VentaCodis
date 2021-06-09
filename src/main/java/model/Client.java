@@ -1,15 +1,14 @@
 package model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "Client")
-public class Client implements Serializable {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProduct;
+    private Long idClient;
     private String username;
     private String password;
     private String numTel;
@@ -29,12 +28,14 @@ public class Client implements Serializable {
         this.password = password;
     }
 
-    public Long getIdProduct() {
-        return idProduct;
+
+
+    public Long getIdClient() {
+        return idClient;
     }
 
-    public void setIdProduct(Long idProduct) {
-        this.idProduct = idProduct;
+    public void setIdClient(Long idClient) {
+        this.idClient = idClient;
     }
 
     public String getUsername() {
@@ -68,5 +69,6 @@ public class Client implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
 

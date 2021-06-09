@@ -2,23 +2,20 @@ package controller;
 
 import model.Client;
 import MyLib.Functions;
-import view.ViewSale;
+import view.View;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class InitialController implements KeyListener {
-    public ViewSale vista;
-    public Client client;
+    public View vista;
+    public Client admin;
 
-    public InitialController(ViewSale vista, Client client) {
+    public InitialController(View vista, Client admin) {
         this.vista = vista;
-        this.client = client;
+        this.admin = admin;
         this.vista.jtfUser.addKeyListener(this);
         this.vista.jtfPass.addKeyListener(this);
-        //this.vista.jbEnter;
     }
 
     @Override
@@ -33,10 +30,10 @@ public class InitialController implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if (Functions.iniciar(client, vista)){
+        if (Functions.iniciar(admin, vista)){
             vista.jbEnter.setEnabled(true);
         }else{
-            vista.jbEnter.setEnabled(true);
+            vista.jbEnter.setEnabled(false);
         }
     }
 }
